@@ -8,7 +8,8 @@ namespace Sample
 {
     public interface interface1
     {
-        [Logging]
+        [SampleMethodBoundaryAspect]
+           [Logging]
         [Exception]
         [Query(CommandText = "GetSeqNextValue", CommandType = System.Data.CommandType.StoredProcedure)]
         List<long> getSurname(Object surName, SqlConnection connection);

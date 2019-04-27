@@ -19,6 +19,8 @@ namespace Sample
         {
             // ILogger logger = new LoggerLog4Net();// container.GetInstance<ILogger>();
             proxyDefinition.Implement(() => new ExceptionInterceptor(container.GetInstance<ILogger>()), m => m.GetCustomAttributes(typeof(ExceptionAttribute), true).Count() > 0);
+            
+            proxyDefinition.Implement(() => new MethodAspectInterceptor(container.GetInstance<ILogger>()), m => m.GetCustomAttributes(typeof(MethodBoundaryAspectAttribute), true).Count() > 0);
             proxyDefinition.Implement(() => new LoggingInterceptor(container.GetInstance<ILogger>()), m => m.GetCustomAttributes(typeof(LoggingAttribute), true).Count() > 0);
             proxyDefinition.Implement(() => new SQLInterceptor(), m => m.GetCustomAttributes(typeof(QueryAttribute), true).Count() > 0);
 

@@ -59,10 +59,13 @@
   <ItemGroup>
     <Compile Include="Attributes\ExceptionAttribute.cs" />
     <Compile Include="Attributes\InsertAttribute.cs" />
+    <Compile Include="Attributes\MethodBoundaryAspectAttribute.cs" />
     <Compile Include="Attributes\QueryAttribute.cs" />
     <Compile Include="Attributes\TransactionAttribute.cs" />
+    <Compile Include="IAspectMethod.cs" />
     <Compile Include="IException.cs" />
     <Compile Include="Attributes\LoggingAttribute.cs" />
+    <Compile Include="Interceptors\MethodAspectInterceptor.cs" />
     <Compile Include="LoggerLog4net.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="Interceptors\LoggingInterceptor.cs" />
